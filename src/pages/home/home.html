@@ -7,8 +7,6 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <img id="image" (load)="imageLoaded()" src="../assets/imgs/logo.png">
+  <input type="range" max="1" min="-1" value="0" (input)="brighnessSliderChange(this)" step="0.01" id="brightness">
 </ion-content>
