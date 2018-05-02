@@ -7,6 +7,9 @@
 </ion-header>
 
 <ion-content padding>
-  <img id="image" (load)="imageLoaded()" src="../assets/imgs/logo.png">
+  <img id="image" (load)="imageLoaded()" src="./assets/imgs/logo.png">
+  
   <input type="range" max="1" min="-1" value="0" (input)="brighnessSliderChange(this)" step="0.01" id="brightness">
+  <input type="range" max="1" min="-1" value="0" (input)="brighnessSliderChange(this)" step="0.01" id="contrast">
+    
 </ion-content>

@@ -10,7 +10,10 @@ import fx from 'glfx';
 export class HomePage {
   canvas: any = null;
   texture: any = null;
+  
   totalBrightness = 0;
+  totalContrast = 0;
+
   constructor(public navCtrl: NavController) {
     console.log(fx);
   }
@@ -34,10 +37,19 @@ export class HomePage {
   }
   brighnessSliderChange()
   {
-    var value = parseFloat((<HTMLInputElement>document.getElementById("brightness")).value);
-    console.log(this.canvas);
-    var brightness = value - this.totalBrightness;
-    this.totalBrightness = value;
-    this.canvas.brightnessContrast(brightness, 0).update();
+    var brightnessvalue = parseFloat((<HTMLInputElement>document.getElementById("brightness")).value);
+    var contrastvalue = parseFloat((<HTMLInputElement>document.getElementById("contrast")).value);
+
+    var brightness = brightnessvalue - this.totalBrightness;
+    this.totalBrightness = brightnessvalue;
+
+    var contrast = contrastvalue - this.totalContrast;
+    this.totalBrightness = contrastvalue;
+
+
+    this.canvas.brightnessContrast(brightness, contrast).update();
+  }
+  hueSaturtionSliderChange(){
+
   }
 }
