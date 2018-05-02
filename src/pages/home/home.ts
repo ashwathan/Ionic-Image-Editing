@@ -44,7 +44,7 @@ export class HomePage {
     this.totalBrightness = brightnessvalue;
 
     var contrast = contrastvalue - this.totalContrast;
-    this.totalBrightness = contrastvalue;
+    this.totalContrast = contrastvalue;
 
 
     this.canvas.brightnessContrast(brightness, contrast).update();
