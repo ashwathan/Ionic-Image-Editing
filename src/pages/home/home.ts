@@ -14,6 +14,9 @@ export class HomePage {
   totalBrightness = 0;
   totalContrast = 0;
 
+  totalHue = 0;
+  totalSaturation = 0;
+
   constructor(public navCtrl: NavController) {
     console.log(fx);
   }
@@ -50,6 +53,15 @@ export class HomePage {
     this.canvas.brightnessContrast(brightness, contrast).update();
   }
   hueSaturtionSliderChange(){
+    var huevalue = parseFloat((<HTMLInputElement>document.getElementById("hue")).value);
+    var saturationvalue = parseFloat((<HTMLInputElement>document.getElementById("saturation")).value);
 
+    var hue = huevalue - this.totalHue;
+    this.totalHue = huevalue;
+
+    var saturation = saturationvalue - this.totalSaturation;
+    this.totalSaturation = saturationvalue;
+
+    this.canvas.hueSaturation(hue, saturation).update();
   }
 }
